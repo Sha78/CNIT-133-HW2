@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Part 3 - jQuery</title>
+    <meta charset="utf-8">
+    <meta name="description" content="This is the jQuery section of homework 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".css">
+    <style>
+        body {
+            background-color: lightcoral;
+        }
+        
+        .wrapp {
+            margin-left: 20%;
+            background-color: lightgrey;
+            padding: 10px;
+            margin-right: 40%;
+            height: 270px;
+        }
+        
+        td:first-of-type {
+            padding-right: 10px;
+        }
+        
+      
+        
+        li {
+            list-style-type: none;
+            display: inline-block;
+            position: relative;
+            padding-right: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        a{
+            text-decoration: none;
+        }
+         aside{
+            float:left;
+            clear:right;
+        }
+        
+        li:first-of-type {
+            margin-left: 20%;
+        }
+          footer {
+                width: 100%;
+                height: 50px;
+                position: fixed;
+                bottom: 0;
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 25px;
+            }
+    </style>
+
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw1">HW1</a></li>
+            <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw2">HW2</a></li>
+              <li><a href="https://hills.ccsf.edu/~shaycraf/CNIT133/hw3">HW-3</a></li>
+            <li><a href="#">HW4</a></li>
+            <li><a href="#">HW5</a></li>
+            <li><a href="#">HW6</a></li>
+            <li><a href="#">HW7</a></li>
+            <li><a href="#">HW8</a></li>
+        </ul>
+    </nav>
+      <aside>
+    <table>
+        <tr>
+            <td><a href="part1.html">Part 1 - document.write</a></td>
+
+            <tr>
+                <td><a href="part2.html">Part 2 - Input intergers on a form</a></td>
+            </tr>
+            <tr>
+                <td><a href="part3.html">Part 3 - Input numbers and fade results</a></td>
+            </tr>
+            <tr>
+                <td><a href="part4.html">Part 4 - Squares and Cubes</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">Extra Credit</a></td>
+            </tr>
+    </table>
+        </aside>
+    <div class="wrapp">
+        <table>
+            <tr>
+                <td>
+                    First number:</td>
+                <td>
+                    <input type="number" class="numms" name="First Number" id="num1">
+                </td>
+            </tr><tr>
+                <td>
+                    Second number:</td>
+                <td>
+                    <input type="number" class="numms" name="Second Number" id="num2">
+                </td>
+            </tr><tr>
+                <td>
+                    Thrid number:</td>
+                <td>
+                    <input type="number" class="numms" name="Third Number" id="num3">
+                </td>
+            </tr><tr>
+                <td>
+                    Fourth number:</td>
+                <td>
+                    <input type="number" class="numms" name="Fourth Number" id="num4">
+                </td>
+            </tr><tr>
+                <td>
+                    Fifth number:</td>
+                <td>
+                    <input type="number" class="numms" name="Fifth Number" id="num5">
+                </td>
+            </tr>
+        </table>
+        <br>
+
+        <script>
+            function getit() {
+                var a = document.getElementById("num1").value;
+                var b = document.getElementById("num2").value;
+                var c = document.getElementById("num3").value;
+                var d = document.getElementById("num4").value;
+                var e = document.getElementById("num5").value;
+               
+                var posNums = 0;
+                var negNums = 0;
+                var zeros = 0;
+    
+                if (a > 0) {
+                    posNums++;
+                } else if (a < 0) {
+                    negNums++;
+                } else {
+                    zeros++;
+                }
+                  if (b > 0) {
+                    posNums++;
+                } else if (b < 0) {
+                    negNums++;
+                } else {
+                    zeros++;
+                }
+                  if (c > 0) {
+                    posNums++;
+                } else if (c < 0) {
+                    negNums++;
+                } else {
+                    zeros++;
+                }
+                  if (d > 0) {
+                    posNums++;
+                } else if (d < 0) {
+                    negNums++;
+                } else {
+                    zeros++;
+                }
+                  if (e > 0) {
+                    posNums++;
+                } else if (e < 0) {
+                    negNums++;
+                } else {
+                    zeros++;
+                }
+                
+                document.getElementById("result").innerHTML = "The number of positive numbers is: " + posNums + "\n" + "The number of negative numbers is: " + negNums + "\n"  + "The number of zeros is: " + zeros + "\n";
+              
+            }
+      
+  
+</script>
+        <form>
+            <textarea rows="5" cols="40" id="result"></textarea>
+        </form>
+        <input type="button" value="Results" onclick="getit()">
+        <button type="button">Click to Fade</button>
+        <!--<input type="button" value="Click to Fade" onclick="result()">-->
+    </div>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script>
+$(document).ready(function(){
+$("button").click(function(){
+$("textarea").fadeTo("slow", 0.12);
+    });
+});
+</script>
+    
+    <footer><span><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">
+            <img style="border:0;width:88px;height:31px" src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+
+        <a href=https://validator.w3.org/nu/?doc=https%3A%2F%2Fhills.ccsf.edu%2F~shaycraf%2FCNIT133%2Fhw2%2Fpart3.html"" target="_blank">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="31" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
+            </a></span></footer>
+</body>
+
+</html>
